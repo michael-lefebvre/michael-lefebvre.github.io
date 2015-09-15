@@ -1,0 +1,72 @@
+@font-face {
+  font-family: 'ColfaxBold';
+  src: url('#{$font-path}Colfax-Bold.eot'); /* IE9 Compat Modes */
+  src: url('#{$font-path}Colfax-Bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('#{$font-path}Colfax-Bold.woff') format('woff'), /* Modern Browsers */
+       url('#{$font-path}Colfax-Bold.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('#{$font-path}Colfax-Bold.svg#354422b001c2d0f9dcf8df2404cf86ed') format('svg'); /* Legacy iOS */
+
+  font-style:   normal;
+  font-weight:  700;
+}
+
+@font-face {
+  font-family: 'ColfaxMedium';
+  src: url('#{$font-path}Colfax-Medium.eot'); /* IE9 Compat Modes */
+  src: url('#{$font-path}Colfax-Medium.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('#{$font-path}Colfax-Medium.woff') format('woff'), /* Modern Browsers */
+       url('#{$font-path}Colfax-Medium.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('#{$font-path}Colfax-Medium.svg#eacadab73975123c4aee337df820bb32') format('svg'); /* Legacy iOS */
+
+  font-style:   normal;
+  font-weight:  400;
+}
+
+@font-face {
+  font-family: 'ColfaxRegular';
+  src: url('#{$font-path}Colfax-Regular.eot'); /* IE9 Compat Modes */
+  src: url('#{$font-path}Colfax-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('#{$font-path}Colfax-Regular.woff') format('woff'), /* Modern Browsers */
+       url('#{$font-path}Colfax-Regular.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('#{$font-path}Colfax-Regular.svg#baf2864d4cfcbabd96e0926e27a56f1f') format('svg'); /* Legacy iOS */
+
+  font-style:   normal;
+  font-weight:  400;
+}
+
+@font-face {
+  font-family: 'ColfaxLight';
+  src: url('#{$font-path}Colfax-Light.eot'); /* IE9 Compat Modes */
+  src: url('#{$font-path}Colfax-Light.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('#{$font-path}Colfax-Light.woff') format('woff'), /* Modern Browsers */
+       url('#{$font-path}Colfax-Light.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('#{$font-path}Colfax-Light.svg#9c2d54c96f62b7a62b86ceaefb201df8') format('svg'); /* Legacy iOS */
+
+  font-style:   normal;
+  font-weight:  200;
+}
+
+@font-face {
+  font-family: 'ScalaBoldItalic';
+  src: url('#{$font-path}Scala-BoldItalic.eot'); /* IE9 Compat Modes */
+  src: url('#{$font-path}Scala-BoldItalic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('#{$font-path}Scala-BoldItalic.woff') format('woff'), /* Modern Browsers */
+       url('#{$font-path}Scala-BoldItalic.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('#{$font-path}Scala-BoldItalic.svg#ab33b937275e084cd888873999a0bec5') format('svg'); /* Legacy iOS */
+
+  font-style:   italic;
+  font-weight:  700;
+}
+
+@font-face {
+  font-family: 'ScalaRegular';
+  src: url('#{$font-path}Scala.eot'); /* IE9 Compat Modes */
+  src: url('#{$font-path}Scala.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('#{$font-path}Scala.woff') format('woff'), /* Modern Browsers */
+       url('#{$font-path}Scala.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('#{$font-path}Scala.svg#3012dcff1477e1feaab81764587c9bbd') format('svg'); /* Legacy iOS */
+
+  font-style:   normal;
+  font-weight:  400;
+}
+

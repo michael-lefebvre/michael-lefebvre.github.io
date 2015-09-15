@@ -1,0 +1,160 @@
+
+// Global reset
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+
+// Body reset
+
+html {
+  font-size: 62.5%;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+body {
+  background-color: #fff; // $body-bg;
+  color: $text-color;
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  // line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+  overflow: hidden;
+  text-align: center;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+// Links
+
+a {
+  text-decoration: none;
+  outline: none;
+
+  &:hover,
+  &:focus,
+  &.active {
+    outline: none;
+  }
+}
+
+// Lists
+
+ul,
+ol {
+  list-style: none;
+}
+
+.bkgd,
+.container {
+  bottom: 0;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+  z-index: 0
+}
+
+.bkgd {
+  &:before {
+    background: #f9f9f9;
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 50%;
+  }
+}
+
+.container {
+  overflow-y: auto;
+  z-index: 100;
+}
+
+.content {
+  display: block;
+  margin: 0 auto;
+  height: 100%;
+  max-width: 1440px;
+  width: $content-with;
+}
+
+.hr {
+  border-top: $site-border;
+  margin-bottom: 0;
+  margin-top: 10vh;
+  width: 45%;
+}
+
+.hr--right {
+  margin-left: 55%;
+  margin-right: 0;
+}
+
+.hr--left {
+  margin-right: 55%;
+  margin-left: 0;
+}
+
+.tagline {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 90%;
+  max-height: 700px;
+
+  & > div { width: 100% }
+}
+
+.projects {
+  margin: 15vh 0
+}
+
+.projects__row {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  margin-bottom: 15vh;
+  width: 100%
+}
+
+.projects__screen {
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: 45%;
+
+  img {
+    display: block;
+    width: 100%
+  }
+}
+
+.project__details {
+  flex-grow: 1;
+  flex-shrink: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  & > div { width: 100% }
+}
+
+.projects__screen + .project__details { margin-left: 10% }
+.project__details + .projects__screen { margin-left: 10% }
