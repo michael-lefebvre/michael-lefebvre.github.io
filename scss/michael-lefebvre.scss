@@ -1,15 +1,536 @@
+//
+// Mixins
+// --------------------------------------------------
 
-// Core variables and mixins
-@import "variables";
-
-// Reset and dependencies
-@import "reset";
 @import "bourbon";
 
-// Utility classes
-@import "utils";
+//
+// Variables
+// --------------------------------------------------
 
-// Core CSS
-@import "fonts";
-@import "typo";
-@import "layout";
+//== Assets paths
+//
+
+$img-path: '../img/';
+
+$icon-github: '#{$img-path}networks/github.svg';
+$icon-twitter: '#{$img-path}networks/twitter.svg';
+$icon-lastfm: '#{$img-path}networks/lastfm.svg';
+
+//== Colors
+//
+$color-primary:         #a8bf4a; // green
+$color-additional:      #ddeb7f;
+$color-gray:            #f9f9f9; // gray
+$color-contrast:        #5d605f;
+
+// alias
+$color-text:            $color-contrast;
+
+//== Scaffolding
+//
+
+//** Content size.
+$content-with:          900px;
+//** Horizontal rules.
+$site-border:           1px solid #e7e8e8;
+//** Global text color on `<body>`.
+$text-color:            $color-text;
+//** Global textual link color.
+$link-color:            $color-primary;
+//** Link hover color.
+$link-hover-color:      $color-additional;
+
+
+//== Typography
+//
+
+$font-family-sans:      'museo-sans',sans-serif;
+$font-family-serif:     'Playfair Display', serif;
+
+$font-family-base:        $font-family-sans;
+
+$font-size-base:          17px;
+
+//== Media queries breakpoints
+//
+//## Define the breakpoints at which your layout will change, adapting to different screen sizes.
+
+// Extra small screen / phone
+$screen-xs:                  480px;
+// Small screen / tablet
+$screen-sm:                  768px;
+// Medium screen / desktop
+$screen-md:                  992px;
+// Large screen / wide desktop
+$screen-lg:                  1200px;
+
+//
+// Layout
+// --------------------------------------------------
+
+
+  // Based on
+  // html5doctor.com Reset Stylesheet v1.6.1
+  // --------------------------------------------
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+  background:transparent;
+  border:0;
+  font-size:100%;
+  margin:0;
+  outline:0;
+  padding:0;
+  vertical-align:baseline;
+}
+
+body { line-height:1 }
+
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section {
+  display:block;
+}
+
+  // Link
+  // --------------------
+
+a {
+  background: transparent;
+  font-size: 100%;
+  margin: 0;
+  outline: none;
+  padding: 0;
+  text-decoration: none;
+  vertical-align: baseline;
+
+  &:hover,
+  &:focus,
+  &:active { outline: none }
+}
+
+  // Horizontal Rule
+  // --------------------
+
+hr {
+  background: none;
+  border: 0;
+  border-top: $site-border;
+  display: block;
+  height: 1px;
+  margin: 50px auto;
+  padding: 0;
+  width: 75%
+}
+
+  // Titles
+  // --------------------
+
+h1, h2, h3, h4, h5, h6 { font-weight: normal }
+
+  // Lists
+  // ---------------
+
+ul,
+ol { list-style: none }
+
+  // Box Model
+  // ---------------
+
+*,
+*:before,
+*:after { box-sizing: border-box }
+
+
+// Body reset
+// --------------
+
+html,
+body {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  background-color: #fff;
+  color: $text-color;
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  height: 100%;
+  scroll-behavior: smooth;
+  text-align: center;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+  width: 100%;
+}
+
+// Typo
+// --------------
+
+  // Font Family
+
+.ff-sans {
+  font-family: $font-family-sans;
+  font-weight: 300
+}
+.ff-serif {
+  font-family: $font-family-serif;
+  font-weight: 400;
+}
+
+  // Font Weight
+
+.fw-light { font-weight: 100 }
+.fw-regular { font-weight: 400 }
+.fw-bold { font-weight: 700 }
+.fw-extra { font-weight: 900 }
+
+  // Font color
+
+.co-primary { color: $color-primary }
+
+// Layout
+// --------------
+
+.container {
+  height: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+  position: relative;
+}
+
+.content {
+  height: 100%;
+  display: block;
+  position: relative;
+  text-align: left;
+  z-index: 100;
+}
+
+.greetings {
+  display: flex;
+  flex-direction: column;
+  height: 90%;
+  max-height: 700px;
+
+  h1 {
+    font-size: 25px;
+    line-height: 35px;
+    margin-bottom: 40px
+  }
+
+  h1 strong {
+    color: $color-primary;
+    font-size: 40px
+  }
+
+  h3 {
+    font-size: 20px;
+    line-height: 30px;
+  }
+
+  h3 i { font-size: 30px }
+
+  p { line-height: 22px }
+}
+
+.greetings__box {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+
+  &:first-child {
+    align-items: flex-start;
+    justify-content: flex-end;
+    height: 30%;
+    padding-bottom: 5%;
+  }
+
+  &:last-child {
+    align-items: flex-end;
+    height: 55%;
+    justify-content: space-between;
+    padding: 5% 0;
+  }
+}
+
+// Artpack
+// --------------
+
+.section__title {
+  font-size: 25px;
+  font-style: italic;
+  margin-bottom: 5vh;
+}
+
+.resume {
+  list-style: disc;
+  padding-left: 20px;
+}
+
+.resume li {
+  line-height: 25px;
+  margin-bottom: 15px;
+}
+
+.resume br { display: none }
+
+.list {}
+
+
+// Projects
+// --------------
+
+.projects__intro,
+.projects_outro { text-align: right }
+
+.projects__intro {
+  font-size: 20px;
+  line-height: 30px;
+  padding: 30px 0;
+}
+
+.projects_outro { line-height: 25px }
+
+.projects { margin: 50px 0 }
+
+.project__row {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  margin-bottom: 15vh;
+  width: 100%
+}
+
+.project__screen {
+  img {
+    display: block;
+    width: 100%
+  }
+}
+.project__name {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+.project__link { color: $color-primary }
+
+.project__desc {
+  font-size: 14px;
+  line-height: 26px;
+  margin-top: 20px;
+}
+
+.project__desc a {
+  border-bottom: 1px dotted $color-contrast;
+  color: $color-contrast
+}
+
+// Contact
+// --------------
+
+.contact {
+  padding: 30px 0 50px;
+  text-align: center
+}
+
+.contact p {
+  line-height: 25px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%
+}
+
+.contact ul {
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 30px;
+  width: auto
+}
+
+.contact li { display: inline-block }
+
+.i-network {
+  background-color: $color-contrast;
+  display: block;
+  height: 35px;
+  mask-position: center;
+  mask-repeat: no-repeat;
+  mask-size: cover;
+  text-indent: -9000px;
+  width: 35px;
+}
+
+.i-network--github { mask-image: url(#{$icon-github}) }
+.i-network--twitter { mask-image: url(#{$icon-twitter}) }
+.i-network--lastfm { mask-image: url(#{$icon-lastfm}) }
+
+.contact a:hover .i-network { background-color: $color-primary }
+
+.no-mask {
+  .i-network {
+    background-color: transparent;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .contact a:hover .i-network { background-color: transparent }
+
+  .i-network--github { background-image: url(#{$icon-github}) }
+  .i-network--twitter { background-image: url(#{$icon-twitter}) }
+  .i-network--lastfm { background-image: url(#{$icon-lastfm}) }
+}
+
+//
+// Media Queries
+// --------------------------------------------------
+
+@media only screen and (max-width: $screen-sm) {
+
+  .project__screen {
+    margin-bottom: 25px;
+    margin-left: -20px;
+    margin-right: -20px;
+  }
+
+  .greetings {
+    h1 {
+      font-size: 25px;
+      line-height: 35px;
+      padding-bottom: 30px
+    }
+
+    h1 strong { font-size: 35px }
+  }
+}
+
+/* Landscape */
+@media only screen
+  and (min-device-width: 375px)
+  and (max-device-width: 667px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: landscape) {
+
+  .container {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  .greetings {
+    h1 {
+      font-size: 25px;
+      line-height: 35px;
+      padding-bottom: 30px
+    }
+
+    h1 strong { font-size: 35px }
+  }
+
+  .greetings__box{
+    &:first-child,
+    &:last-child { padding: 0 }
+  }
+
+  .project__screen {
+    margin-left: -40px;
+    margin-right: -40px;
+  }
+}
+
+@media only screen and (min-width: $screen-md) {
+
+  hr { width: 45% }
+
+  .hr--right {
+    margin-left: 55%;
+    margin-right: 0;
+  }
+
+  .hr--left {
+    margin-right: 55%;
+    margin-left: 0;
+  }
+
+  .container:before {
+    @include position( fixed, 0 0 0 0);
+    background: $color-gray;
+    content: '';
+    width: 50%;
+    z-index: 0;
+  }
+
+  .content {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: $content-with;
+    width: 100%;
+  }
+
+  // .greetings h1 {
+  //   font-size: 25px;
+  //   line-height: 35px;
+  //   margin-bottom: 40px
+  // }
+
+  // .greetings h1 strong { font-size: 40px }
+
+  .greetings h3 i { font-size: 40px }
+
+  .greetings hr { width: 100% }
+
+  .greetings__box {
+    &:last-child {
+      padding-left: 55%;
+    }
+  }
+
+  .resume br { display: block }
+
+  .project__row:nth-child(odd) {
+    flex-direction: row;
+
+    .project__details { margin-left: 10% }
+  }
+
+  .project__row:nth-child(even) {
+    flex-direction: row-reverse;
+
+    .project__details { margin-right: 10% }
+  }
+
+  .project__screen {
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 45%;
+  }
+
+  .project__details {
+    flex-grow: 1;
+    flex-shrink: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    & > div { width: 100% }
+  }
+
+  .projects_outro,
+  .contact { width: 45% }
+
+  .projects_outro { margin-left: 55% }
+
+  .contact { text-align: left }
+  .contact p {
+    margin: 0;
+    width: 100%;
+  }
+
+  .contact ul { margin: 0 }
+}

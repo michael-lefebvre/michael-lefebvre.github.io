@@ -14,6 +14,7 @@ var buildFolder  = './assets/'
 
 gulp.task('default', [
     'sass'
+  , 'watch'
 ])
 
 // Compile Sass
@@ -30,6 +31,7 @@ gulp.task('sass', function ()
         browsers: ['last 2 versions']
       , cascade: false
     } ) )
+    .pipe( rename('styles.css') )
     .pipe( gulpif( argv.production, minify( {compatibility: 'ie8'} ) ) )
     .pipe( gulpif( argv.production, rename({suffix: '.min'}) ) )
     .pipe( gulpif( !argv.production, sourcemaps.write() ) )
