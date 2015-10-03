@@ -19,7 +19,7 @@ $icon-lastfm: '#{$img-path}networks/lastfm.svg';
 
 //== Colors
 //
-$color-primary:         #a8bf4a; // green
+$color-primary:         dodgerblue; // primary
 $color-additional:      #ddeb7f;
 $color-gray:            #f9f9f9; // gray
 $color-contrast:        #5d605f;
@@ -316,6 +316,7 @@ body {
     width: 100%
   }
 }
+.project__date { font-size: 11px }
 .project__name {
   font-size: 30px;
   margin-bottom: 10px;
@@ -507,6 +508,9 @@ body {
   }
 
   .project__screen {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     flex-grow: 0;
     flex-shrink: 0;
     flex-basis: 45%;
