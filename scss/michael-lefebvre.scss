@@ -221,14 +221,14 @@ body {
   max-height: 700px;
 
   h1 {
-    font-size: 25px;
+    font-size: 33px;
     line-height: 35px;
     margin-bottom: 40px
   }
 
   h1 strong {
     color: $color-primary;
-    font-size: 40px
+    font-size: 38px
   }
 
   h3 {
@@ -239,7 +239,7 @@ body {
 
   h3 i { font-size: 30px }
 
-  p { line-height: 22px }
+  p { line-height: 25px }
 }
 
 .greetings__box {
@@ -321,7 +321,10 @@ body {
   font-size: 30px;
   margin-bottom: 10px;
 }
-.project__link { color: $color-primary }
+.project__link {
+  border-bottom: 1 dashed $color-primary;
+  color: $color-primary;
+}
 
 .project__desc {
   font-size: 14px;
@@ -438,6 +441,12 @@ body {
   .greetings__box{
     &:first-child,
     &:last-child { padding: 0 }
+  }
+
+  .project__screen {
+    margin-bottom: 25px;
+    margin-left: -20px;
+    margin-right: -20px;
   }
 
   .project__screen {
