@@ -2,19 +2,16 @@
   "name": "michael-lefebvre.cc",
   "version": "2.0.0",
   "devDependencies": {
-    "gulp": "^3.6.2",
-    "gulp-autoprefixer": "^2.1.0",
-    "gulp-concat": "^2.2.0",
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-concat": "^2.6.0",
     "gulp-filesize": "0.0.6",
-    "gulp-if": "^1.2.5",
-    "gulp-minify-css": "^1.1.6",
-    "gulp-plumber": "^1.0.0",
-    "gulp-rename": "^1.2.0",
-    "gulp-sass": "^0.7.1",
-    "gulp-sourcemaps": "^1.5.0",
-    "gulp-uglify": "^0.3.0",
-    "gulp-watch": "^0.6.4",
-    "node-bourbon": "1.2.3",
-    "yargs": "^3.11.0"
+    "gulp-if": "^2.0.0",
+    "gulp-minify-css": "^1.2.2",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.1.0",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-uglify": "^1.5.1",
+    "gulp-util": "^3.0.7"
   }
 }

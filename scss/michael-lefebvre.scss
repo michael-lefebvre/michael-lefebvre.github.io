@@ -1,10 +1,4 @@
 //
-// Mixins
-// --------------------------------------------------
-
-@import "bourbon";
-
-//
 // Variables
 // --------------------------------------------------
 
@@ -19,7 +13,7 @@ $icon-lastfm: '#{$img-path}networks/lastfm.svg';
 
 //== Colors
 //
-$color-primary:         dodgerblue; // primary
+$color-primary:         #3c9; // primary
 $color-additional:      #ddeb7f;
 $color-gray:            #f9f9f9; // gray
 $color-contrast:        #5d605f;
@@ -201,8 +195,6 @@ body {
 
 .container {
   height: 100%;
-  padding-left: 20px;
-  padding-right: 20px;
   position: relative;
 }
 
@@ -215,18 +207,16 @@ body {
 }
 
 .greetings {
+  border-bottom: $site-border;
   display: flex;
   flex-direction: column;
-  height: 90%;
+  height: 80%;
+  justify-content: center;
   max-height: 700px;
+  margin-bottom: 10%;
 
   h1 {
-    font-size: 33px;
     line-height: 35px;
-    margin-bottom: 40px
-  }
-
-  h1 strong {
     color: $color-primary;
     font-size: 38px
   }
@@ -242,156 +232,91 @@ body {
   p { line-height: 25px }
 }
 
+.greetings__companies {
+  margin: 50px 0 0;
+  padding-left: 45%;
+  text-align: right;
+}
+
 .greetings__box {
   display: flex;
   flex-direction: column;
-  text-align: right;
+}
 
-  &:first-child {
-    align-items: flex-start;
-    justify-content: flex-end;
-    height: 30%;
-    padding-bottom: 5%;
-  }
+.greetings__box__position {
+  padding-top: 20px;
 
-  &:last-child {
-    align-items: flex-end;
-    height: 55%;
-    justify-content: space-between;
-    padding: 5% 0;
+  a {
+    border-bottom: 1px dashed rgba( $color-contrast, .3 );
+    color: $color-contrast
   }
 }
-
-// Artpack
-// --------------
-
-.section__title {
-  font-size: 25px;
-  font-style: italic;
-  margin-bottom: 5vh;
-}
-
-.resume {
-  list-style: disc;
-  padding-left: 20px;
-}
-
-.resume li {
-  line-height: 25px;
-  margin-bottom: 15px;
-}
-
-.resume br { display: none }
-
-.list {}
-
 
 // Projects
 // --------------
 
-.projects__intro,
-.projects_outro { text-align: right }
-
-.projects__intro {
-  font-size: 20px;
-  line-height: 30px;
-  padding: 30px 0;
+.projects {
+  border-bottom: $site-border;
+  margin: 50px 0
 }
-
-.projects_outro { line-height: 25px }
-
-.projects { margin: 50px 0 }
 
 .project__row {
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
-  margin-bottom: 15vh;
+  margin-bottom: 10vh;
+  // position: relative;
+  width: 100%;
+}
+
+.project__link { position: relative }
+
+.project__screen {
+  display: block;
   width: 100%
 }
 
-.project__screen {
-  img {
-    display: block;
-    width: 100%
-  }
-}
-.project__date { font-size: 11px }
-.project__name {
-  font-size: 30px;
-  margin-bottom: 10px;
-}
-.project__link {
-  border-bottom: 1 dashed $color-primary;
-  color: $color-primary;
-}
-
-.project__desc {
+.project__url {
+  background: #fff;
+  background: rgba( #fff, .85 );
+  bottom: 0;
+  color: $color-contrast;
+  display: block;
   font-size: 14px;
-  line-height: 26px;
-  margin-top: 20px;
+  padding: 3px 5px;
+  position: absolute
 }
 
-.project__desc a {
-  border-bottom: 1px dotted $color-contrast;
-  color: $color-contrast
-}
+// .project__row:nth-child(even) .project__link { text-align: right }
 
 // Contact
 // --------------
 
 .contact {
+  // padding-top: 30px;
   padding: 30px 0 50px;
-  text-align: center
-}
-
-.contact p {
-  line-height: 25px;
-  margin-left: auto;
-  margin-right: auto;
-  width: 80%
-}
-
-.contact ul {
-  margin-left: auto;
-  margin-right: auto;
-  padding-top: 30px;
+  text-align: center;
   width: auto
 }
-
 .contact li { display: inline-block }
 
 .i-network {
-  background-color: $color-contrast;
+  background-color: transparent;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   display: block;
   height: 35px;
-  mask-position: center;
-  mask-repeat: no-repeat;
-  mask-size: cover;
+  text-align: left;
   text-indent: -9000px;
   width: 35px;
 }
 
-.i-network--github { mask-image: url(#{$icon-github}) }
-.i-network--twitter { mask-image: url(#{$icon-twitter}) }
-.i-network--lastfm { mask-image: url(#{$icon-lastfm}) }
+.contact a:hover .i-network { background-color: transparent }
 
-.contact a:hover .i-network { background-color: $color-primary }
-
-.no-mask {
-  .i-network {
-    background-color: transparent;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-
-  .contact a:hover .i-network { background-color: transparent }
-
-  .i-network--github { background-image: url(#{$icon-github}) }
-  .i-network--twitter { background-image: url(#{$icon-twitter}) }
-  .i-network--lastfm { background-image: url(#{$icon-lastfm}) }
-}
+.i-network--github { background-image: url(#{$icon-github}) }
+.i-network--twitter { background-image: url(#{$icon-twitter}) }
+.i-network--lastfm { background-image: url(#{$icon-lastfm}) }
 
 //
 // Media Queries
@@ -399,82 +324,29 @@ body {
 
 @media only screen and (max-width: $screen-sm) {
 
-  .project__screen {
-    margin-bottom: 25px;
-    margin-left: -20px;
-    margin-right: -20px;
-  }
-
   .greetings {
-    h1 {
-      font-size: 25px;
-      line-height: 35px;
-      padding-bottom: 30px
-    }
+    padding-left: 20px;
+    padding-right: 20px;
 
-    h1 strong { font-size: 35px }
+    // h1 { font-size: 25px }
   }
+
+  .greetings__companies {
+    padding-left: 0;
+    text-align: left;
+  }
+
+  .greetings__box__position { padding-top: 50px }
+
 }
 
-/* Landscape */
-@media only screen
-  and (min-device-width: 375px)
-  and (max-device-width: 667px)
-  and (-webkit-min-device-pixel-ratio: 2)
-  and (orientation: landscape) {
-
-  .container {
-    padding-left: 40px;
-    padding-right: 40px;
-  }
-
-  .greetings {
-    h1 {
-      font-size: 25px;
-      line-height: 35px;
-      padding-bottom: 30px
-    }
-
-    h1 strong { font-size: 35px }
-  }
-
-  .greetings__box{
-    &:first-child,
-    &:last-child { padding: 0 }
-  }
-
-  .project__screen {
-    margin-bottom: 25px;
-    margin-left: -20px;
-    margin-right: -20px;
-  }
-
-  .project__screen {
-    margin-left: -40px;
-    margin-right: -40px;
-  }
-}
-
-@media only screen and (min-width: $screen-md) {
+@media only screen and (min-width: $screen-sm) {
 
   hr { width: 45% }
 
-  .hr--right {
-    margin-left: 55%;
-    margin-right: 0;
-  }
-
-  .hr--left {
-    margin-right: 55%;
-    margin-left: 0;
-  }
-
-  .container:before {
-    @include position( fixed, 0 0 0 0);
-    background: $color-gray;
-    content: '';
-    width: 50%;
-    z-index: 0;
+  .container {
+    padding-left: 20px;
+    padding-right: 20px;
   }
 
   .content {
@@ -483,68 +355,7 @@ body {
     max-width: $content-with;
     width: 100%;
   }
+  // .contact { text-align: right }
 
-  // .greetings h1 {
-  //   font-size: 25px;
-  //   line-height: 35px;
-  //   margin-bottom: 40px
-  // }
-
-  // .greetings h1 strong { font-size: 40px }
-
-  .greetings h3 i { font-size: 40px }
-
-  .greetings hr { width: 100% }
-
-  .greetings__box {
-    &:last-child {
-      padding-left: 55%;
-    }
-  }
-
-  .resume br { display: block }
-
-  .project__row:nth-child(odd) {
-    flex-direction: row;
-
-    .project__details { margin-left: 10% }
-  }
-
-  .project__row:nth-child(even) {
-    flex-direction: row-reverse;
-
-    .project__details { margin-right: 10% }
-  }
-
-  .project__screen {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-grow: 0;
-    flex-shrink: 0;
-    flex-basis: 45%;
-  }
-
-  .project__details {
-    flex-grow: 1;
-    flex-shrink: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    & > div { width: 100% }
-  }
-
-  .projects_outro,
-  .contact { width: 45% }
-
-  .projects_outro { margin-left: 55% }
-
-  .contact { text-align: left }
-  .contact p {
-    margin: 0;
-    width: 100%;
-  }
-
-  .contact ul { margin: 0 }
+  // .contact ul { margin: 0 }
 }
