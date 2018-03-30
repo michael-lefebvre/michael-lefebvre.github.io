@@ -141,7 +141,7 @@ body {
   padding-bottom: 5px; }
 
 .greetings__box__companies {
-  margin: 50px 0 0;
+  padding-top: 50px;
   width: 65%; }
 
 .greetings__box__position {
