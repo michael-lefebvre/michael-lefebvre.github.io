@@ -232,15 +232,19 @@ body {
   p { line-height: 25px }
 }
 
-.greetings__companies {
-  margin: 50px 0 0;
-  width: 65%;
-  // text-align: right;
-}
-
 .greetings__box {
   display: flex;
   flex-direction: column;
+}
+
+.greetings__box__hello {
+  padding-bottom: 5px;
+}
+
+.greetings__box__companies {
+  margin: 50px 0 0;
+  width: 65%;
+  // text-align: right;
 }
 
 .greetings__box__position {

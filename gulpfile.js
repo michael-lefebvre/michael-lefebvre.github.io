@@ -21,7 +21,7 @@ gulp.task('default', [
 gulp.task('sass', function ()
 {
   gulp.src('./scss/michael-lefebvre.scss')
-    .pipe( sourcemaps.init() )
+    // .pipe( sourcemaps.init() )
     .pipe( sass({
       includePaths: require('node-bourbon').includePaths
     }) )
@@ -34,7 +34,7 @@ gulp.task('sass', function ()
     .pipe( rename('styles.css') )
     .pipe( gulpif( argv.production, minify( {compatibility: 'ie8'} ) ) )
     .pipe( gulpif( argv.production, rename({suffix: '.min'}) ) )
-    .pipe( gulpif( !argv.production, sourcemaps.write() ) )
+    // .pipe( gulpif( !argv.production, sourcemaps.write() ) )
     .pipe( filesize() )
     .pipe( gulp.dest( buildFolder + 'css') )
 })
